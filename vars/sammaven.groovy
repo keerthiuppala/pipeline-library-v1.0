@@ -1,7 +1,5 @@
 #!/usr/bin/env groovy
 
- def call(Map config) {
-      try {
+ def call() {
           sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean package"
-      }
   }
