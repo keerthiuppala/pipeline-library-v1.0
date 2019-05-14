@@ -1,7 +1,7 @@
 #!/usr/bin/env groovy
 
 def call(def buildTool) {
-	echo "keerthi"
+	echo 'keerthi'
 		def mvnHome = tool "${buildTool}";
 	
 	echo "${buildTool}"
