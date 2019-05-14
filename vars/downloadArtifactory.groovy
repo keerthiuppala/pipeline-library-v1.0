@@ -5,8 +5,8 @@ def call(def artifactoryTool) {
         def downloadSpec = """{
 		"files": [
 		{
-		  "pattern": "Sample/*.war",
-		  "target": "Sample/"
+		   "pattern": "${downloadArtifacts}",
+          		"target": "${downloadTarget}"
 		}
 		]
 		}"""
