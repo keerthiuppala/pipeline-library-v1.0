@@ -1,7 +1,8 @@
 #!/usr/bin/env groovy
 
-def call() {
-  git url: 'https://github.com/Nagagopi/maven-simple.git'
-  def mvnHome = tool 'maven_home'
-  sh "${mvnHome}/bin/mvn -B verify"
+def call(def buildTool) {
+		def mvnHome = tool "${buildTool}";
+        sh "${mvnHome}/bin/mvn "+"${mavenGoals}"+" -Dbuild.number=${BUILD_NUMBER}"
 }
+
+
