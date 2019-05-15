@@ -1,5 +1,7 @@
 #!/usr/bin/env groovy
 
+def call()
+{
 pipeline {
     agent any
 	
@@ -49,4 +51,5 @@ pipeline {
 
 	}
 
+}
 }
