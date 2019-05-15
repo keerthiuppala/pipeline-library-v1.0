@@ -17,34 +17,15 @@ def call()
 		downloadTarget = 'samplerepo/'
 		publishJunit = 'target/surefire-reports/*.xml'
               }
-    stages {
-	    
-	    stage('Checkout') {
-			steps {
-				scmFile(branch,gitUrl)
-			      }
-		        }
-	    stage('Build') {
-			steps {
-				buildFile(buildTool)
-			}
-		}
-	    stage('Upload Artifacts') {
-			steps {
-				uploadArtifactory(artifactoryTool)
-			}
-		}
-	    stage('Download Artifacts') {
-			steps {
-				downloadArtifactory(artifactoryTool)
-			}
-		}
-	    stage('Publish Junit Reports') {
-			steps {
-				junitFile()
-			}
-		}
-
-	}
-
+   
+		scmFile(branch,gitUrl)
+			   
+		buildFile(buildTool)
+			
+		uploadArtifactory(artifactoryTool)
+			
+		downloadArtifactory(artifactoryTool)
+			
+		junitFile()
+			
 }
