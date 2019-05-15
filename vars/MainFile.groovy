@@ -4,7 +4,7 @@ def call()
 {
 	
 	node {
-  def datas = readYaml file: 'https://github.com/keerthiuppala/maven-project.git/env.yml'
+  def datas = readYaml file: 'env.yml'
 }
 pipeline {
     agent any
