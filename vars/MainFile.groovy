@@ -2,45 +2,36 @@
 
 def call()
 {
+	
+	node {
+  datas = readYaml file: 'env.yml'
+}
 pipeline {
     agent any
 	
 	options {
     skipDefaultCheckout(true)
 	}
-	environment {
-        branch = 'master'
-		gitUrl = 'https://github.com/keerthiuppala/maven-project.git'
-		gitCredentials = ' '
-		buildTool = 'maven_home'
-		mavenGoals = 'clean package'
-		artifactoryTool = 'artifactoryserver'
-		uploadArtifacts = '*maven*.jar'
-		uploadRepository = 'samplerepo/'
-		downloadArtifacts = 'samplerepo/*.jar'
-		downloadTarget = 'samplerepo/'
-		publishJunit = 'target/surefire-reports/*.xml'
-    }
     stages {
 	    
 	    stage('Checkout') {
 			steps {
-				scmFile(branch,gitUrl)
+				scmFile(datas.branch,datas.gitUrl)
 			}
 		}
 	    stage('Build') {
 			steps {
-				buildFile(buildTool)
+				buildFile(datas.buildTool)
 			}
 		}
 	    stage('Upload Artifacts') {
 			steps {
-				uploadArtifactory(artifactoryTool)
+				uploadArtifactory(datas.artifactoryTool)
 			}
 		}
 	    stage('Download Artifacts') {
 			steps {
-				downloadArtifactory(artifactoryTool)
+				downloadArtifactory(datas.artifactoryTool)
 			}
 		}
 	    stage('Publish Junit Reports') {
