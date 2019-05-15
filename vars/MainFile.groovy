@@ -6,8 +6,10 @@ def call()
 	node {
 		echo "11111111111111"
 		def filename = 'env.yml'
-  def datas = readYaml file: filename
+		println filename.txt
+  		def datas = readYaml file: filename
 		echo datas.branch.toString()
+		echo "222222222222222"
 }
 pipeline {
     agent any
