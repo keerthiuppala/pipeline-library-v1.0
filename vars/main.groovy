@@ -2,13 +2,6 @@
 
 def call() 
 {
-  pipeline 
-  {
-    agent any
-	
-	  options {
-      skipDefaultCheckout(true)
-	          }
 	environment {
         branch = 'master'
 		gitUrl = 'https://github.com/keerthiuppala/maven-project.git'	
@@ -52,6 +45,4 @@ def call()
 
 	}
 
-}
-  
 }
