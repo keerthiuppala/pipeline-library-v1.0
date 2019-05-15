@@ -1,4 +1,4 @@
-def call(String name = 'human') 
+def call( ) 
 {
   pipeline 
   {
