@@ -1,13 +1,17 @@
 #!/usr/bin/env groovy
 @Library('pipeline-library-v1.0')_
 
-def call() 
-{
+pipeline {
+    agent any
+	
+	options {
+    skipDefaultCheckout(true)
+	}
 	environment {
         branch = 'master'
-		gitUrl = 'https://github.com/keerthiuppala/maven-project.git'	
+		gitUrl = 'https://github.com/Nagagopi/maven-simple.git'
+		gitCredentials = 'Nagagopi:horntail23'
 		buildTool = 'maven_home'
-		gitCredentials = ' '
 		mavenGoals = 'clean package'
 		artifactoryTool = 'artifactoryserver'
 		uploadArtifacts = '*maven*.jar'
@@ -15,16 +19,35 @@ def call()
 		downloadArtifacts = 'samplerepo/*.jar'
 		downloadTarget = 'samplerepo/'
 		publishJunit = 'target/surefire-reports/*.xml'
-              }
-   
-		scmFile(branch,gitUrl)
-			   
-		buildFile(buildTool)
-			
-		uploadArtifactory(artifactoryTool)
-			
-		downloadArtifactory(artifactoryTool)
-			
-		junitFile()
-			
+    }
+    stages {
+	    
+	    stage('Checkout') {
+			steps {
+				scmFile(branch,gitUrl)
+			}
+		}
+	    stage('Build') {
+			steps {
+				buildFile(buildTool)
+			}
+		}
+	    stage('Upload Artifacts') {
+			steps {
+				uploadArtifactory(artifactoryTool)
+			}
+		}
+	    stage('Download Artifacts') {
+			steps {
+				downloadArtifactory(artifactoryTool)
+			}
+		}
+	    stage('Publish Junit Reports') {
+			steps {
+				junitFile()
+			}
+		}
+
+	}
+
 }
