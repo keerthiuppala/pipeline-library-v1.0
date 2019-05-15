@@ -14,6 +14,7 @@ def call()
         steps {
 		echo "222222222222222222222222222222222222"
             script{ datas = readYaml (file: 'env.yml') }
+		echo datas.branch.toString()
 		echo "333333333333333333333333333333333333"
                   }
     }
