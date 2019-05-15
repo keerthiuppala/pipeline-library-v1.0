@@ -2,6 +2,9 @@
 
 def call()
 {
+	
+	echo "Keerthi"
+	
 pipeline {
     agent any
 	
