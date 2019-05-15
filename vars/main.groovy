@@ -14,7 +14,7 @@ pipeline {
 	environment {
         branch = 'master'
 		gitUrl = 'https://github.com/keerthiuppala/maven-project.git'
-		gitCredentials = 'Nagagopi:horntail23'
+		gitCredentials = ' '
 		buildTool = 'maven_home'
 		mavenGoals = 'clean package'
 		artifactoryTool = 'artifactoryserver'
