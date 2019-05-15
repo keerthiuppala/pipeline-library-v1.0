@@ -2,21 +2,23 @@
 
 def call()
 {
-	
-	
-		echo "11111111111111"
-		def filename = 'env.yml'
-  		def datas = readYaml file: filename
-		echo datas.branch.toString()
-		echo "222222222222222"
-
-pipeline {
+	pipeline {
     agent any
 	
 	options {
     skipDefaultCheckout(true)
 	}
     stages {
+	    
+	    stage('Reading Env Var') {
+      steps {
+        script {
+          def datas = readYaml file: 'env.yml'
+          
+        }
+    
+      }
+    }
 	    
 	    stage('Checkout') {
 			steps {
