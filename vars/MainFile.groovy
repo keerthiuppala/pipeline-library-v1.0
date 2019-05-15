@@ -9,10 +9,7 @@ def call()
     skipDefaultCheckout(true)
 	}
     stages {
-	    
-	    
-	    echo "11111111111111111111111111111111"
-	    
+    
 	    stage('Read YAML file') {
         steps {
 		echo "222222222222222222222222222222222222"
