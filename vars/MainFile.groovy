@@ -4,7 +4,9 @@ def call()
 {
 	
 	node {
+		echo "11111111111111"
   def datas = readYaml file: 'env.yml'
+		echo datas.branch.toString()
 }
 pipeline {
     agent any
