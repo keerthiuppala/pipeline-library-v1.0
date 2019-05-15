@@ -22,7 +22,7 @@ def call()
 	    
 	    stage('Checkout') {
 		    
-		    echo "4444444444444444444444444444444444444444444"
+		    
 			steps {
 				scmFile(datas.branch,datas.gitUrl)
 			}
