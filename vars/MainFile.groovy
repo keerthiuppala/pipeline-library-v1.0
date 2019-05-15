@@ -4,7 +4,7 @@ def call()
 {
 	
 	node {
-  datas = readYaml file: 'env.yml'
+  def datas = readYaml file: 'env.yml'
 }
 pipeline {
     agent any
