@@ -5,7 +5,8 @@ def call()
 	
 	node {
 		echo "11111111111111"
-  def datas = readYaml file: 'env.yml'
+		def filename = 'env.yml'
+  def datas = readYaml file: filename
 		echo datas.branch.toString()
 }
 pipeline {
