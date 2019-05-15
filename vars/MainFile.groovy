@@ -3,10 +3,9 @@
 def call()
 {
 	
-	node {
+	environment {
 		echo "11111111111111"
 		def filename = 'env.yml'
-		println filename.txt
   		def datas = readYaml file: filename
 		echo datas.branch.toString()
 		echo "222222222222222"
