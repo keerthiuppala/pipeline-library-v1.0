@@ -13,8 +13,9 @@ def call()
 	    stage('Reading Env Var') {
       steps {
         script {
+	echo "111111111111111111111"
           def datas = readYaml file: 'env.yml'
-          
+          echo "2222222222222222222222"
         }
     
       }
