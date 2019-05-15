@@ -13,7 +13,7 @@ pipeline {
 	}
 	environment {
         branch = 'master'
-		gitUrl = 'https://github.com/Nagagopi/maven-simple.git'
+		gitUrl = 'https://github.com/keerthiuppala/maven-project.git'
 		gitCredentials = 'Nagagopi:horntail23'
 		buildTool = 'maven_home'
 		mavenGoals = 'clean package'
