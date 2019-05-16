@@ -4,19 +4,6 @@
 
 def call()
 {
-	echo "11111111111111111111111111111111"
-def branchName = getCurrentBranch()
-echo "222222222222222222222222222222222222"
-echo 'My branch is' + branchName
-echo "3333333333333333333333333"
-
-def getCurrentBranch () {
-    return sh (
-        script: 'git rev-parse --abbrev-ref HEAD',
-        returnStdout: true
-    ).trim()
-}
-	
 	
 pipeline {
     agent any
