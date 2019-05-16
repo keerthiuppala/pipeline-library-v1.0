@@ -11,9 +11,9 @@ pipeline {
     stages {
     	    stage('Checkout') {    
 			steps {
-				echo "\u2600 BUILD_URL=${env.BUILD_URL}"
+				echo "\u2600 GIT_URL=${env.BUILD_URL}"
 					
-				scmFile("master", BUILD_URL)
+				scmFile("master", GIT_URL)
 			}
 		}
 	    stage('Read YAML file') {
