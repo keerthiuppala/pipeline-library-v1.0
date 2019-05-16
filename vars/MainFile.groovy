@@ -12,7 +12,8 @@ pipeline {
     	    stage('Checkout') {    
 			steps {
 				
-				\$class: 'GitSCM',
+				def branch = sh (script: 'git rev-parse --abbrev-ref HEAD',returnStdout: true).trim()
+				echo "${branch}
 				echo "${env.GIT_URL}"
 				scmFile("master", "https://github.com/keerthiuppala/maven-project.git")
 			}
