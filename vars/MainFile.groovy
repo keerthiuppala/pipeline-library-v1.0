@@ -10,7 +10,7 @@ pipeline {
     stages {
     	    stage('Checkout') {    
 			steps {
-				scmFile("master","https://github.com/keerthiuppala/maven-project.git")
+				scmFile("master","/.git")
 			}
 		}
 	    stage('Read YAML file') {
