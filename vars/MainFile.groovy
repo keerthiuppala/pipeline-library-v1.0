@@ -5,16 +5,17 @@ def call()
 	
 pipeline {
     agent any
+	node 
+	{
+		echo "111111111111111111111111"
+		echo "My branch is: ${env.BRANCH_NAME}"	
+	}
 	options {
     skipDefaultCheckout(true)
 		}
     stages {
     	    stage('Checkout') {    
 			steps {
-				echo "11111111111111111111"
-				def branch = env.BRANCH_NAME
-				echo "2222222222222222222222222"
-				echo "${branch}"
 				scmFile("master", "https://github.com/keerthiuppala/maven-project.git")
 			}
 		}
