@@ -13,6 +13,7 @@ pipeline {
     stages {
     	    stage('Checkout') {    
 			steps {
+				"${env.BRANCH_NAME}"
 				echo "\u2600 ${GIT_URL}"
 					
 				scmFile(branch, gitrepo)
