@@ -12,11 +12,8 @@ pipeline {
     	    stage('Checkout') {    
 			steps {
 				echo "\u2600 BUILD_URL=${env.BUILD_URL}"
-				Jenkins jenkins = Jenkins.getInstance()
-				item = jenkins.instance.getItemByFullName("JOB_NAME")
-				println item.getScm().getUserRemoteConfigs()[0].getUrl()
-				gitrepo= item.getScm().getUserRemoteConfigs()[0].getUrl()	
-				scmFile("master", gitrepo)
+					
+				scmFile("master", BUILD_URL)
 			}
 		}
 	    stage('Read YAML file') {
