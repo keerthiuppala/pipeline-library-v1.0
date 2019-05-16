@@ -5,8 +5,8 @@ def call(def artifactoryTool) {
         def uploadSpec = """{
         "files": [
         {
-          "pattern": "${uploadArtifacts}",
-          "target": "${uploadRepository}"
+          "pattern": "${datas.uploadArtifacts}",
+          "target": "${datas.uploadRepository}"
         }
          ]
         }"""
