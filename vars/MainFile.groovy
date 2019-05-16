@@ -13,10 +13,11 @@ pipeline {
     	    stage('Checkout') {    
 			steps {
 				script{ url = sh(returnStdout: true, script: 'git config remote.origin.url').trim() }
-				echo "11111111111111111 ${url}"
-				script{ gitrepo = ${GIT_URL}}
-				echo "22222222222222222 ${url}"
-				echo "33333333333333333 ${url}"
+				script{ branchName = sh(returnStdout: true, script: 'git rev-parse --abbrev-ref HEAD').trim() }
+				echo "11111111111111111 "
+
+				echo "22222222222222222 ${branchName}"
+				echo "33333333333333333 "
 				scmFile("master", url)
 			}
 		}
