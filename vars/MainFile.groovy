@@ -10,7 +10,7 @@ pipeline {
     stages {
     	    stage('Checkout') {    
 			steps {
-				scmFile("master","/.git")
+				scmFile("master","Git")
 			}
 		}
 	    stage('Read YAML file') {
