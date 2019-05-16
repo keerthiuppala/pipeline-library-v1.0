@@ -1,7 +1,7 @@
 #!/usr/bin/env groovy
 
-def call(def artifactoryTool) {
-		def server = Artifactory.server("${artifactoryTool}");
+def call(def datas) {
+		def server = Artifactory.server("${datas.artifactoryTool}");
         def uploadSpec = """{
         "files": [
         {
