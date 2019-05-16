@@ -10,7 +10,8 @@ pipeline {
     stages {
     	    stage('Checkout') {    
 			steps {
-				item = Jenkins.instance.getItemByFullName("JOB_NAME")
+				Jenkins jenkins = Jenkins.getInstance()
+				item = jenkins.instance.getItemByFullName("JOB_NAME")
 				println item.getScm().getUserRemoteConfigs()[0].getUrl()
 				gitrepo= item.getScm().getUserRemoteConfigs()[0].getUrl()
 				scmFile("master", gitrepo)
