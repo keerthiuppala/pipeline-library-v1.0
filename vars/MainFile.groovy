@@ -1,7 +1,5 @@
 #!/usr/bin/env groovy
 
-
-
 def call()
 {
 	
@@ -13,9 +11,6 @@ pipeline {
     stages {
     	    stage('Checkout') {    
 			steps {
-				echo "\u2600 ${env.BRANCH_NAME}"
-				echo "\u2600 ${GIT_URL}"
-					
 				scmFile("master", "https://github.com/keerthiuppala/maven-project.git")
 			}
 		}
