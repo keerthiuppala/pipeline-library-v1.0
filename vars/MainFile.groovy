@@ -32,7 +32,7 @@ def call()
 			steps {
 				echo "4444444444444444444444444444444444"
 				echo datas.buildTool.toString()
-				buildFile(datas.buildTool)
+				buildFile(datas)
 				echo "5555555555555555555555555555555555555"
 			}
 		}
