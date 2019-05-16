@@ -1,6 +1,10 @@
 #!/usr/bin/env groovy
 
-echo "11111111111111111111111111111111"
+
+
+def call()
+{
+	echo "11111111111111111111111111111111"
 def branchName = getCurrentBranch()
 echo "222222222222222222222222222222222222"
 echo 'My branch is' + branchName
@@ -12,11 +16,6 @@ def getCurrentBranch () {
         returnStdout: true
     ).trim()
 }
-	
-
-def call()
-{
-	
 	
 	
 pipeline {
