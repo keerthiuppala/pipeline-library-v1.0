@@ -1,5 +1,16 @@
 #!/usr/bin/env groovy
 
+import java.util.logging.Logger
+import jenkins.*
+import jenkins.model.*
+import hudson.model.*
+import hudson.tasks.Shell
+import hudson.slaves.EnvironmentVariablesNodeProperty
+import hudson.slaves.EnvironmentVariablesNodeProperty.Entry
+import hudson.model.Node.Mode
+import hudson.markup.RawHtmlMarkupFormatter
+import hudson.markup.EscapedMarkupFormatter
+
 def call()
 {
 pipeline {
