@@ -16,7 +16,7 @@ pipeline {
 				echo "\u2600 ${env.BRANCH_NAME}"
 				echo "\u2600 ${GIT_URL}"
 					
-				scmFile("master", "${GIT_URL}")
+				scmFile("master", "https://github.com/keerthiuppala/maven-project.git")
 			}
 		}
 	    stage('Read YAML file') {
