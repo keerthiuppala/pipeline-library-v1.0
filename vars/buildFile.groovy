@@ -2,7 +2,7 @@
 
 def call(def buildTool) {
 		def mvnHome = tool "${buildTool}";
-	sh "${mvnHome}/bin/mvn "+"${mavenGoals}"+" -Dbuild.number=${BUILD_NUMBER}"
+	sh "${mvnHome}/bin/mvn "+"${datas.mavenGoals}"+" -Dbuild.number=${BUILD_NUMBER}"
 }
 
 
