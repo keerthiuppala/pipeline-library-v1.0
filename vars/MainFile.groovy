@@ -10,7 +10,10 @@ pipeline {
     stages {
     	    stage('Checkout') {    
 			steps {
-				scmFile("master","Git")
+				item = Jenkins.instance.getItemByFullName("JOB_NAME")
+				println item.getScm().getUserRemoteConfigs()[0].getUrl()
+				gitrepo= item.getScm().getUserRemoteConfigs()[0].getUrl()
+				scmFile("master", gitrepo)
 			}
 		}
 	    stage('Read YAML file') {
