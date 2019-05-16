@@ -5,11 +5,7 @@ def call()
 	
 pipeline {
     agent any
-	node 
-	{
-		echo "111111111111111111111111"
-		echo "My branch is: ${env.BRANCH_NAME}"	
-	}
+	
 	options {
     skipDefaultCheckout(true)
 		}
