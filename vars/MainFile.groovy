@@ -12,7 +12,7 @@ pipeline {
     	    stage('Checkout') {    
 			steps {
 				
-				$class: 'GitSCM',
+				\$class: 'GitSCM',
 				echo "${env.GIT_URL}"
 				scmFile("master", "https://github.com/keerthiuppala/maven-project.git")
 			}
