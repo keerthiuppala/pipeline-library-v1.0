@@ -13,7 +13,7 @@ pipeline {
     	    stage('Checkout') {    
 			steps {
 				script{ url = sh(returnStdout: true, script: 'git config remote.origin.url').trim() }
-				script{ branchName = sh(returnStdout: true, script: 'git rev-parse --abbrev-ref HEAD').trim() }
+				script{ branchName = sh(returnStdout: true, script: 'git rev-parse --abbrev-ref').trim() }
 				echo "11111111111111111 "
 
 				echo "22222222222222222 ${branchName}"
