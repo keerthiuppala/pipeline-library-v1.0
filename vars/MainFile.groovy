@@ -16,7 +16,7 @@ pipeline {
 				"${env.BRANCH_NAME}"
 				echo "\u2600 ${GIT_URL}"
 					
-				scmFile(branch, gitrepo)
+				scmFile("master", ${GIT_URL})
 			}
 		}
 	    stage('Read YAML file') {
