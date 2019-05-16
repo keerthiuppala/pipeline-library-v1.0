@@ -12,9 +12,7 @@ pipeline {
     	    stage('Checkout') {    
 			steps {
 				
-				def branch = sh (script: 'git rev-parse --abbrev-ref HEAD',returnStdout: true).trim()
-				echo "${branch}"
-				echo "${env.GIT_URL}"
+				echo "111111111111111111111 My branch is: ${env.BRANCH_NAME}"
 				scmFile("master", "https://github.com/keerthiuppala/maven-project.git")
 			}
 		}
