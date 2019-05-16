@@ -30,7 +30,10 @@ def call()
     }
 	    stage('Build') {
 			steps {
+				echo "4444444444444444444444444444444444"
+				echo datas.buildTool.toString()
 				buildFile(datas.buildTool)
+				echo "5555555555555555555555555555555555555"
 			}
 		}
 	    stage('Upload Artifacts') {
