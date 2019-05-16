@@ -11,8 +11,8 @@ pipeline {
     stages {
     	    stage('Checkout') {    
 			steps {
-				echo "\u2600 gitrepo=${env.GIT_URL}"
-				echo "\u2600 branch=${env.GIT_BRANCH}"	
+				echo "\u2600 gitrepo=${GIT_URL}"
+				echo "\u2600 branch=${GIT_BRANCH}"	
 				scmFile(branch, gitrepo)
 			}
 		}
