@@ -10,6 +10,16 @@ def call()
 	}
     stages {
     
+	    
+	    
+	    
+	    stage('Checkout') {
+		    
+		    
+			steps {
+				scmFile("master","https://github.com/keerthiuppala/maven-project.git")
+			}
+		}
 	    stage('Read YAML file') {
         steps {
 		echo "222222222222222222222222222222222222"
@@ -18,16 +28,6 @@ def call()
 		echo "333333333333333333333333333333333333"
                   }
     }
-	    
-	    
-	    
-	    stage('Checkout') {
-		    
-		    
-			steps {
-				scmFile(datas.branch,datas.gitUrl)
-			}
-		}
 	    stage('Build') {
 			steps {
 				buildFile(datas.buildTool)
