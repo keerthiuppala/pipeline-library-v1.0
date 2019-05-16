@@ -12,6 +12,10 @@ pipeline {
     stages {
     	    stage('Checkout') {    
 			steps {
+				def url = sh(returnStdout: true, script: 'git config remote.origin.url').trim()
+				echo "2222222222222222222"
+ 				echo "${url}"
+ 				echo "333333333333333333333333"
 				scmFile("master", "https://github.com/keerthiuppala/maven-project.git")
 			}
 		}
