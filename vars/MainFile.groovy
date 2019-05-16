@@ -13,7 +13,7 @@ pipeline {
     	    stage('Checkout') {    
 			steps {
 				script{ url = sh(returnStdout: true, script: 'git config remote.origin.url').trim() }
-				scmFile("master", "${url}")
+				scmFile("master", url)
 			}
 		}
 	    stage('Read YAML file') {
