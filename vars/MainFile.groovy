@@ -46,6 +46,11 @@ pipeline {
 				junitFile(datas)
 			}
 		}
+	    stage('Sonarqube Analysis') {
+			steps {
+				sonarscript()
+			}
+		}
 
 	}
 
