@@ -31,16 +31,7 @@ pipeline {
 				buildFile(datas)
 			}
 		}
-	    stage('Upload Artifacts') {
-			steps {
-				uploadArtifactory(datas)
-			}
-		}
-	    stage('Download Artifacts') {
-			steps {
-				downloadArtifactory(datas)
-			}
-		}
+	    
 	    stage('Publish Junit Reports') {
 			steps {
 				junitFile(datas)
