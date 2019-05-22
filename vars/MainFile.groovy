@@ -32,14 +32,10 @@ pipeline {
 			}
 		}
 	    
-	    stage('Publish Junit Reports') {
-			steps {
-				junitFile(datas)
-			}
-		}
+	    
 	    stage('Sonarqube Analysis') {
 			steps {
-				sonarscript()
+				sonarscript(datas)
 			}
 		}
 
